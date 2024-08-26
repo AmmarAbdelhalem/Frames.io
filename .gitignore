@@ -129,6 +129,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+moben
+image.png
 
 # Spyder project settings
 .spyderproject
