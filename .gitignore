@@ -50,6 +50,7 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+.framesIO
 
 # Translations
 *.mo
@@ -120,7 +121,7 @@ celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
-
+null.png
 # Environments
 .env
 .venv
@@ -129,8 +130,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-moben
-image.png
+.vscode
 
 # Spyder project settings
 .spyderproject
