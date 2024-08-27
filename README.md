@@ -1,8 +1,4 @@
-frame = select from frames folder
-base = base64.encode(frame)
-result = model.input(base)
-api.output(
-    frame,
-    result
-)
+# Frames.io
 
+Created with [FastAPI](https://github.com/fastapi/fastapi).
+by Ammar Abdelhalem.
