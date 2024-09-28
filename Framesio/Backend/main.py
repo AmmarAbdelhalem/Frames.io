@@ -1,23 +1,18 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException, status
 from fastapi.staticfiles import StaticFiles
-from src.upload import saveFrames
+from .src.upload import saveFrames
 import shutil
 import os
-from src.rand import get_random_string_number
+from .src.rand import get_random_string_number
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+fapp = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Adjust to your needs
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# @fapp.get("/api/hello")
+async def gethello():
+    return {"hello": "heelo"}
 
-
-@app.post("/upload")
+@fapp.post("/upload")
 async def upload_and_process_mp4(file: UploadFile = File(...)):
     if file.content_type != "video/mp4":
         raise HTTPException(status_code=400, detail="Invalid file type")
@@ -34,5 +29,4 @@ async def upload_and_process_mp4(file: UploadFile = File(...)):
     
     return {'message': 'Done', 'folder': zip_path}
 
-app.mount("/download", StaticFiles(directory="download"), name="download")
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
+fapp.mount("/download", StaticFiles(directory="Framesio\Backend\download"), name="download")

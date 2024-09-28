@@ -16,3 +16,5 @@ SQLAlchemy==2.0.32
 starlette==0.38.2
 typing_extensions==4.12.2
 uvicorn==0.30.6
+
+reflex==0.6.0
